@@ -1,0 +1,157 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Profile - Legal Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>LEGAL CONNECT</h2>
+
+    <div>
+        <a href="lawyer-profile.html">Find Lawyer</a>
+        <a href="my-consultations.html">My Consultations</a>
+    </div>
+</nav>
+
+<div class="profile-container">
+
+    <div class="profile-card">
+        <h1>Adv. Anurag singh</h1>
+
+        <p class="verified">✓ Verified Lawyer</p>
+
+        <div class="profile-info">
+            <p><strong>Specialization:</strong> Criminal & Family Law</p>
+            <p><strong>Experience:</strong> 12 Years</p>
+            <p><strong>Location:</strong> Bengaluru</p>
+            <p><strong>Consultation Fee:</strong> ₹1,000</p>
+            <p><strong>Rating:</strong> ⭐ 4.8 / 5</p>
+        </div>
+    </div>
+
+
+    <div class="consultation-box">
+
+        <h2>Request Consultation</h2>
+
+        <form id="consultationForm">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name">
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone">
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Legal Category</label>
+
+                <select id="category">
+                    <option value="">Select Category</option>
+                    <option value="Criminal">Criminal</option>
+                    <option value="Family">Family</option>
+                    <option value="Property">Property</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Cyber">Cyber</option>
+                    <option value="Corporate">Corporate</option>
+                </select>
+
+                <span class="error" id="categoryError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Consultation Date</label>
+                <input type="date" id="date">
+                <span class="error" id="dateError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Consultation Time</label>
+                <input type="time" id="time">
+                <span class="error" id="timeError"></span>
+            </div>
+
+            <div class="form-group">
+
+                <label>Consultation Type</label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input type="radio"
+                               name="consultationType"
+                               value="Online">
+                        Online
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="consultationType"
+                               value="In Person">
+                        In Person
+                    </label>
+
+                </div>
+
+                <span class="error" id="typeError"></span>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="problem">
+                    Describe Your Legal Problem
+                </label>
+
+                <textarea id="problem"></textarea>
+
+                <span class="error" id="problemError"></span>
+
+            </div>
+
+
+            <button type="submit">
+                Request Consultation
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div id="confirmation">
+
+        <h2>✓ Consultation Request Submitted!</h2>
+
+        <div id="confirmationDetails"></div>
+
+        <button id="newRequestButton">
+            Make Another Request
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

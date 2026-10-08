@@ -1,0 +1,457 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #222;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    background-color: #172554;
+    color: white;
+
+    padding: 18px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+}
+
+
+/* =========================
+   LAWYER PROFILE
+========================= */
+
+.lawyer-profile {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 30px;
+}
+
+
+/* Lawyer Image */
+
+.lawyer-photo {
+    width: 170px;
+    height: 170px;
+
+    min-width: 170px;
+
+    background-color: #e8eefc;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.profile-icon {
+    font-size: 70px;
+}
+
+
+/* Lawyer Information */
+
+.lawyer-info h1 {
+    color: #172554;
+
+    margin-bottom: 8px;
+
+    font-size: 30px;
+}
+
+.lawyer-info p {
+    margin: 9px 0;
+
+    line-height: 1.5;
+}
+
+.verified {
+    color: green;
+
+    font-weight: bold;
+}
+
+.description {
+    color: #555;
+
+    margin-top: 15px !important;
+}
+
+
+/* =========================
+   CONSULTATION BOX
+========================= */
+
+.consultation-box {
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.consultation-box h2 {
+    color: #172554;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #172554;
+
+    box-shadow: 0 0 3px rgba(23, 37, 84, 0.3);
+}
+
+
+/* =========================
+   RADIO BUTTONS
+========================= */
+
+.radio-group {
+    display: flex;
+
+    gap: 30px;
+}
+
+.radio-label {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: normal !important;
+}
+
+.radio-label input {
+    width: auto;
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error {
+    display: block;
+
+    color: #dc2626;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+    min-height: 16px;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    background-color: #172554;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #1e3a8a;
+}
+
+
+/* =========================
+   CONFIRMATION
+========================= */
+
+.confirmation {
+    display: none;
+
+    background-color: white;
+
+    margin-top: 30px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto;
+
+    background-color: #16a34a;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+.confirmation h2 {
+    color: #16a34a;
+
+    margin-top: 20px;
+
+    margin-bottom: 10px;
+}
+
+.confirmation-details {
+    margin: 25px auto;
+
+    padding: 20px;
+
+    max-width: 500px;
+
+    background-color: #f8fafc;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   NEW REQUEST BUTTON
+========================= */
+
+.new-btn {
+    padding: 12px 25px;
+
+    background-color: #172554;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.new-btn:hover {
+    background-color: #1e3a8a;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #172554;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .lawyer-profile {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .radio-group {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .consultation-box {
+        padding: 25px 20px;
+    }
+}
+.consultation-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.consultation-card h3 {
+    color: #172a46;
+    margin-bottom: 15px;
+}
+
+.consultation-card p {
+    margin: 8px 0;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
