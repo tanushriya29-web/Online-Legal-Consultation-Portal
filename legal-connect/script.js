@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
@@ -26,132 +26,158 @@ document.addEventListener("DOMContentLoaded", function () {
                 'input[name="consultationType"]:checked'
             );
 
-        // Clear errors
         document.querySelectorAll(".error").forEach(function (error) {
             error.textContent = "";
         });
 
         let valid = true;
 
-        // Name
         if (name === "") {
             document.getElementById("nameError").textContent =
                 "Please enter your name.";
             valid = false;
         }
 
-        // Email
         if (email === "") {
             document.getElementById("emailError").textContent =
                 "Please enter your email.";
             valid = false;
         }
 
-        // Phone
         if (!/^[6-9][0-9]{9}$/.test(phone)) {
             document.getElementById("phoneError").textContent =
                 "Enter a valid 10 digit phone number.";
             valid = false;
         }
 
-        // Category
         if (category === "") {
             document.getElementById("categoryError").textContent =
                 "Please select a category.";
             valid = false;
         }
 
-        // Date
         if (date === "") {
             document.getElementById("dateError").textContent =
                 "Please select a date.";
             valid = false;
         }
 
-        // Time
         if (time === "") {
             document.getElementById("timeError").textContent =
                 "Please select a time.";
             valid = false;
         }
 
-        // Consultation type
         if (!selectedType) {
             document.getElementById("typeError").textContent =
                 "Please select Online or In Person.";
             valid = false;
         }
 
-        // Problem
         if (problem.length < 20) {
             document.getElementById("problemError").textContent =
                 "Please enter at least 20 characters.";
             valid = false;
         }
 
-        // Stop if invalid
         if (!valid) {
             return;
         }
 
-        // Get consultation type
         const consultationType = selectedType.value;
 
-        // Create ID
-        const consultationID = "LC" + Date.now();
+        /*
+        Save consultation to Supabase
+        */
 
-        // Create consultation
-        const consultation = {
-            id: consultationID,
-            clientName: name,
-            email: email,
-            phone: phone,
-            lawyer: "Adv. Rahul Sharma",
-            category: category,
-            date: date,
-            time: time,
-            type: consultationType,
-            problem: problem,
-            status: "Pending"
-        };
+        const { data, error } = await supabaseClient
+            .from("consultations")
+            .insert([
+                {
+                    client_name: name,
+                    email: email,
+                    phone: phone,
+                    lawyer_name: "Adv. Rahul Sharma",
+                    category: category,
+                    consultation_date: date,
+                    consultation_time: time,
+                    consultation_type: consultationType,
+                    problem: problem,
+                    status: "Pending"
+                }
+            ])
+            .select()
+            .single();
 
-        // Get existing consultations
-        let consultations =
-            JSON.parse(localStorage.getItem("consultations")) || [];
+        if (error) {
 
-        // Add consultation
-        consultations.push(consultation);
+            console.error("Supabase Error:", error);
 
-        // Save consultation
-        localStorage.setItem(
-            "consultations",
-            JSON.stringify(consultations)
-        );
+            alert(
+                "Unable to save consultation.\n\n" +
+                error.message
+            );
+
+            return;
+        }
 
         console.log("CONSULTATION SAVED");
-        console.log(consultation);
+        console.log(data);
 
-        // Show confirmation details
+        /*
+        Show confirmation
+        */
+
         document.getElementById("confirmationDetails").innerHTML =
-            "<p><strong>Consultation ID:</strong> " + consultationID + "</p>" +
-            "<p><strong>Client:</strong> " + name + "</p>" +
-            "<p><strong>Email:</strong> " + email + "</p>" +
-            "<p><strong>Phone:</strong> " + phone + "</p>" +
+
+            "<p><strong>Consultation ID:</strong> LC" +
+            data.id +
+            "</p>" +
+
+            "<p><strong>Client:</strong> " +
+            name +
+            "</p>" +
+
+            "<p><strong>Email:</strong> " +
+            email +
+            "</p>" +
+
+            "<p><strong>Phone:</strong> " +
+            phone +
+            "</p>" +
+
             "<p><strong>Lawyer:</strong> Adv. Rahul Sharma</p>" +
-            "<p><strong>Category:</strong> " + category + "</p>" +
-            "<p><strong>Date:</strong> " + date + "</p>" +
-            "<p><strong>Time:</strong> " + time + "</p>" +
-            "<p><strong>Type:</strong> " + consultationType + "</p>" +
-            "<p><strong>Problem:</strong> " + problem + "</p>" +
-            "<p><strong>Status:</strong> <span class='pending'>Pending</span></p>";
 
-        // Hide form
-        document.querySelector(".consultation-box").style.display = "none";
+            "<p><strong>Category:</strong> " +
+            category +
+            "</p>" +
 
-        // Show confirmation
-        document.getElementById("confirmation").style.display = "block";
+            "<p><strong>Date:</strong> " +
+            date +
+            "</p>" +
 
-        // Scroll
+            "<p><strong>Time:</strong> " +
+            time +
+            "</p>" +
+
+            "<p><strong>Type:</strong> " +
+            consultationType +
+            "</p>" +
+
+            "<p><strong>Problem:</strong> " +
+            problem +
+            "</p>" +
+
+            "<p><strong>Status:</strong> " +
+            "<span class='pending'>Pending</span>" +
+            "</p>";
+
+        document.querySelector(".consultation-box").style.display =
+            "none";
+
+        document.getElementById("confirmation").style.display =
+            "block";
+
         document.getElementById("confirmation").scrollIntoView({
             behavior: "smooth"
         });
@@ -159,7 +185,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // New request button
+    /*
+    New Consultation button
+    */
+
     const newRequestButton =
         document.getElementById("newRequestButton");
 

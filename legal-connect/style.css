@@ -455,3 +455,24 @@ footer {
     color: orange;
     font-weight: bold;
 }
+.consultation-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.consultation-card h3 {
+    color: #172a46;
+    margin-bottom: 15px;
+}
+
+.consultation-card p {
+    margin: 8px 0;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}

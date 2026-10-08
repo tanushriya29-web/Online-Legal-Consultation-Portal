@@ -1,4 +1,3 @@
-<html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,6 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
@@ -43,13 +41,24 @@
 
         <h2>My Consultations</h2>
 
-        <div id="consultationList"></div>
+        <div id="consultationList">
+
+            <p>Loading consultations...</p>
+
+        </div>
 
     </div>
 
 </div>
 
 
+<!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Your Supabase Configuration -->
+<script src="supabase.js"></script>
+
+<!-- My Consultations JavaScript -->
 <script src="my-consultations.js"></script>
 
 </body>

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const consultationList =
         document.getElementById("consultationList");
@@ -7,15 +7,41 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const consultations =
-        JSON.parse(
-            localStorage.getItem("consultations")
-        ) || [];
+    consultationList.innerHTML =
+        "<p>Loading consultations...</p>";
 
-    console.log("Consultations:", consultations);
+    /*
+    Get consultations from Supabase
+    */
 
+    const { data, error } = await supabaseClient
+        .from("consultations")
+        .select("*")
+        .order("created_at", {
+            ascending: false
+        });
 
-    if (consultations.length === 0) {
+    if (error) {
+
+        console.error("Supabase Error:", error);
+
+        consultationList.innerHTML = `
+            <div class="no-consultation">
+                <h3>Unable to Load Consultations</h3>
+                <p>${error.message}</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    console.log("Consultations:", data);
+
+    /*
+    No consultations
+    */
+
+    if (!data || data.length === 0) {
 
         consultationList.innerHTML = `
             <div class="no-consultation">
@@ -36,25 +62,32 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    /*
+    Display consultations
+    */
 
-    consultations.forEach(function (consultation) {
+    consultationList.innerHTML = "";
+
+    data.forEach(function (consultation) {
 
         const card =
             document.createElement("div");
 
-        card.className = "consultation-card";
+        card.className =
+            "consultation-card";
 
         card.innerHTML =
-            "<h3>Consultation ID: " +
+
+            "<h3>Consultation ID: LC" +
             consultation.id +
             "</h3>" +
 
             "<p><strong>Client:</strong> " +
-            consultation.clientName +
+            consultation.client_name +
             "</p>" +
 
             "<p><strong>Lawyer:</strong> " +
-            consultation.lawyer +
+            consultation.lawyer_name +
             "</p>" +
 
             "<p><strong>Category:</strong> " +
@@ -62,15 +95,15 @@ document.addEventListener("DOMContentLoaded", function () {
             "</p>" +
 
             "<p><strong>Date:</strong> " +
-            consultation.date +
+            consultation.consultation_date +
             "</p>" +
 
             "<p><strong>Time:</strong> " +
-            consultation.time +
+            consultation.consultation_time +
             "</p>" +
 
             "<p><strong>Type:</strong> " +
-            consultation.type +
+            consultation.consultation_type +
             "</p>" +
 
             "<p><strong>Problem:</strong> " +
@@ -78,9 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
             "</p>" +
 
             "<p><strong>Status:</strong> " +
+
             "<span class='pending'>" +
             consultation.status +
-            "</span></p>";
+            "</span>" +
+
+            "</p>";
 
         consultationList.appendChild(card);
 
