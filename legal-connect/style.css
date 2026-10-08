@@ -963,3 +963,58 @@ footer p {
         font-size: 27px;
     }
 }
+/* =========================================
+   SMALL AVAILABLE LAWYERS BOX
+========================================= */
+
+.available-lawyers-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 25px;
+    padding: 10px 18px;
+
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #ede9fe
+    );
+
+    border: 2px solid #818cf8;
+    border-radius: 12px;
+
+    color: #312e81;
+    font-size: 15px;
+
+    box-shadow:
+        0 5px 15px rgba(79, 70, 229, 0.15);
+
+    transition: 0.3s;
+}
+
+.available-lawyers-box:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.22);
+}
+
+.available-lawyers-box span {
+    font-size: 20px;
+}
+
+.available-lawyers-box strong {
+    font-weight: 600;
+}/* Available Lawyers navigation button */
+
+.available-nav {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.available-nav:hover {
+    background: rgba(255, 255, 255, 0.30) !important;
+    transform: translateY(-2px);
+}
