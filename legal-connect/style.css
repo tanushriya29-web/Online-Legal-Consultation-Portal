@@ -1,6 +1,6 @@
-/* =========================
-   GENERAL
-========================= */
+/* =========================================
+   LEGAL CONNECT - BEAUTIFUL CENTERED DESIGN
+========================================= */
 
 * {
     margin: 0;
@@ -10,198 +10,325 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f9;
-    color: #222;
+    background: linear-gradient(135deg, #dbeafe, #ede9fe, #fce7f3);
+    color: #1e293b;
+    min-height: 100vh;
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* =========================================
+   NAVIGATION BAR
+========================================= */
 
 .navbar {
-    background-color: #172554;
+    width: 100%;
+    background: linear-gradient(135deg, #0f172a, #312e81, #2563eb);
+    padding: 20px 5%;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h2 {
     color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
 
-    padding: 18px 8%;
-
+.navbar div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
+.navbar a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+.navbar a:hover {
+    background: white;
+    color: #2563eb;
+    transform: translateY(-3px);
 }
 
 
-/* =========================
+/* =========================================
    MAIN CONTAINER
-========================= */
+========================================= */
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-
-    margin: 40px auto;
+.container,
+.profile-container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 50px auto;
+    text-align: center;
 }
 
 
-/* =========================
+/* =========================================
    LAWYER PROFILE
-========================= */
+========================================= */
 
 .lawyer-profile {
-    background-color: white;
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #eff6ff,
+        #eef2ff
+    );
 
-    padding: 30px;
-
-    border-radius: 12px;
+    padding: 40px;
+    border-radius: 30px;
 
     display: flex;
+    flex-direction: column;
 
-    gap: 30px;
-
+    justify-content: center;
     align-items: center;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+
+    border: 3px solid #bfdbfe;
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.20),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: 0.4s;
+}
+
+.lawyer-profile:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.30);
+}
+
+
+/* =========================================
+   LAWYER PHOTO
+========================================= */
+
+.lawyer-photo {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #bfdbfe,
+        #c4b5fd,
+        #fbcfe8
+    );
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.30);
+
+    margin-bottom: 25px;
+}
+
+.profile-icon {
+    font-size: 80px;
+}
+
+
+/* =========================================
+   LAWYER INFORMATION
+========================================= */
+
+.lawyer-info {
+    text-align: center;
+}
+
+.lawyer-info h1 {
+    font-size: 36px;
+    color: #172554;
+    margin-bottom: 15px;
+}
+
+.lawyer-info p {
+    font-size: 17px;
+    color: #475569;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.verified {
+    display: inline-block;
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+
+    color: white;
+
+    padding: 8px 18px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(22, 163, 74, 0.25);
+}
+
+.description {
+    max-width: 700px;
+    margin: 20px auto !important;
+}
+
+
+/* =========================================
+   CONSULTATION BOX
+========================================= */
+
+.consultation-box {
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    border: 3px solid #ddd6fe;
+
+    box-shadow:
+        0 15px 40px rgba(79, 70, 229, 0.15);
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: 40px;
+}
+
+
+/* Decorative top line */
+
+.consultation-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899,
+        #06b6d4
+    );
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+.consultation-box h2 {
+    color: #312e81;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 2px 5px rgba(49, 46, 129, 0.15);
+}
+
+.subtitle {
+    color: #64748b;
+
+    font-size: 16px;
 
     margin-bottom: 30px;
 }
 
 
-/* Lawyer Image */
-
-.lawyer-photo {
-    width: 170px;
-    height: 170px;
-
-    min-width: 170px;
-
-    background-color: #e8eefc;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-.profile-icon {
-    font-size: 70px;
-}
-
-
-/* Lawyer Information */
-
-.lawyer-info h1 {
-    color: #172554;
-
-    margin-bottom: 8px;
-
-    font-size: 30px;
-}
-
-.lawyer-info p {
-    margin: 9px 0;
-
-    line-height: 1.5;
-}
-
-.verified {
-    color: green;
-
-    font-weight: bold;
-}
-
-.description {
-    color: #555;
-
-    margin-top: 15px !important;
-}
-
-
-/* =========================
-   CONSULTATION BOX
-========================= */
-
-.consultation-box {
-    background-color: white;
-
-    padding: 35px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.consultation-box h2 {
-    color: #172554;
-
-    font-size: 28px;
-
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    color: #666;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================
+/* =========================================
    FORM
-========================= */
+========================================= */
 
 .form-group {
-    margin-bottom: 20px;
+    width: 90%;
+    max-width: 700px;
+
+    margin: 0 auto 22px auto;
+
+    text-align: center;
 }
 
 .form-group label {
     display: block;
 
+    color: #312e81;
+
+    font-size: 16px;
+
     font-weight: bold;
 
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 }
+
+
+/* =========================================
+   INPUTS
+========================================= */
 
 input,
 select,
 textarea {
     width: 100%;
 
-    padding: 12px;
+    padding: 15px;
 
-    border: 1px solid #ccc;
+    border: 2px solid #cbd5e1;
 
-    border-radius: 6px;
+    border-radius: 15px;
 
     font-size: 15px;
 
-    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+
+    text-align: center;
+
+    transition: 0.3s;
 }
 
-textarea {
-    resize: vertical;
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #818cf8;
+
+    background: white;
 }
 
 input:focus,
@@ -209,20 +336,33 @@ select:focus,
 textarea:focus {
     outline: none;
 
-    border-color: #172554;
+    border-color: #6366f1;
 
-    box-shadow: 0 0 3px rgba(23, 37, 84, 0.3);
+    background: white;
+
+    box-shadow:
+        0 0 0 5px rgba(99, 102, 241, 0.12);
+}
+
+textarea {
+    min-height: 130px;
+
+    resize: vertical;
 }
 
 
-/* =========================
+/* =========================================
    RADIO BUTTONS
-========================= */
+========================================= */
 
 .radio-group {
     display: flex;
 
-    gap: 30px;
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
 }
 
 .radio-label {
@@ -230,9 +370,33 @@ textarea:focus {
 
     align-items: center;
 
-    gap: 8px;
+    justify-content: center;
 
-    font-weight: normal !important;
+    gap: 10px;
+
+    padding: 14px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #eef2ff
+    );
+
+    border: 2px solid #c7d2fe;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.radio-label:hover {
+    background: #dbeafe;
+
+    border-color: #6366f1;
+
+    transform: translateY(-3px);
 }
 
 .radio-label input {
@@ -240,9 +404,9 @@ textarea:focus {
 }
 
 
-/* =========================
-   ERROR MESSAGE
-========================= */
+/* =========================================
+   ERROR MESSAGES
+========================================= */
 
 .error {
     display: block;
@@ -251,72 +415,90 @@ textarea:focus {
 
     font-size: 13px;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
     min-height: 16px;
 }
 
 
-/* =========================
+/* =========================================
    SUBMIT BUTTON
-========================= */
+========================================= */
 
 .submit-btn {
-    width: 100%;
+    width: 90%;
+    max-width: 700px;
 
-    padding: 14px;
-
-    background-color: #172554;
-
-    color: white;
+    padding: 17px;
 
     border: none;
 
-    border-radius: 6px;
+    border-radius: 15px;
 
-    font-size: 17px;
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 18px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    margin-top: 10px;
+    margin-top: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.30);
+
+    transition: 0.3s;
 }
 
 .submit-btn:hover {
-    background-color: #1e3a8a;
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(79, 70, 229, 0.40);
 }
 
 
-/* =========================
+/* =========================================
    CONFIRMATION
-========================= */
+========================================= */
 
 .confirmation {
     display: none;
 
-    background-color: white;
+    background: linear-gradient(
+        135deg,
+        #ecfdf5,
+        #f0fdf4,
+        #eff6ff
+    );
 
-    margin-top: 30px;
+    margin-top: 35px;
 
     padding: 40px;
 
     text-align: center;
 
-    border-radius: 12px;
+    border-radius: 30px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 3px solid #86efac;
+
+    box-shadow:
+        0 15px 35px rgba(22, 163, 74, 0.15);
 }
 
 .success-icon {
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
 
-    margin: 0 auto;
-
-    background-color: #16a34a;
-
-    color: white;
+    margin: 0 auto 20px auto;
 
     border-radius: 50%;
 
@@ -326,153 +508,458 @@ textarea:focus {
 
     align-items: center;
 
-    font-size: 35px;
-
-    font-weight: bold;
-}
-
-.confirmation h2 {
-    color: #16a34a;
-
-    margin-top: 20px;
-
-    margin-bottom: 10px;
-}
-
-.confirmation-details {
-    margin: 25px auto;
-
-    padding: 20px;
-
-    max-width: 500px;
-
-    background-color: #f8fafc;
-
-    border-radius: 8px;
-
-    text-align: left;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   NEW REQUEST BUTTON
-========================= */
-
-.new-btn {
-    padding: 12px 25px;
-
-    background-color: #172554;
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
 
     color: white;
 
+    font-size: 40px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(22, 163, 74, 0.30);
+}
+
+.confirmation h2 {
+    color: #15803d;
+
+    margin-bottom: 15px;
+}
+
+.confirmation-details {
+    width: 90%;
+    max-width: 600px;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 2px solid #bbf7d0;
+
+    text-align: center;
+
+    line-height: 2;
+}
+
+
+/* =========================================
+   NEW REQUEST BUTTON
+========================================= */
+
+.new-btn {
+    padding: 14px 30px;
+
     border: none;
 
-    border-radius: 6px;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
 
     cursor: pointer;
 
-    font-size: 15px;
+    transition: 0.3s;
 }
 
 .new-btn:hover {
-    background-color: #1e3a8a;
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.30);
 }
 
 
-/* =========================
+/* =========================================
+   MY CONSULTATIONS
+========================================= */
+
+.consultation-card {
+    width: 90%;
+    max-width: 750px;
+
+    margin: 25px auto;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eff6ff,
+        #f5f3ff
+    );
+
+    border: 2px solid #c7d2fe;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.12);
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.consultation-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(79, 70, 229, 0.22);
+}
+
+.consultation-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    border-radius: 22px 22px 0 0;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+}
+
+.consultation-card h3 {
+    color: #312e81;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+.consultation-card p {
+    color: #475569;
+
+    margin: 10px 0;
+
+    line-height: 1.6;
+}
+
+.consultation-card strong {
+    color: #1e293b;
+}
+
+
+/* =========================================
+   PENDING STATUS
+========================================= */
+
+.pending {
+    display: inline-block;
+
+    background: linear-gradient(
+        135deg,
+        #fef3c7,
+        #fde68a
+    );
+
+    color: #92400e;
+
+    padding: 7px 18px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    border: 1px solid #f59e0b;
+}
+
+
+/* =========================================
+   NO CONSULTATION
+========================================= */
+
+.no-consultation {
+    width: 90%;
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #f5f3ff,
+        #fce7f3
+    );
+
+    border-radius: 25px;
+
+    border: 2px dashed #818cf8;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.10);
+}
+
+.no-consultation h3 {
+    color: #312e81;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.no-consultation p {
+    color: #64748b;
+
+    margin-bottom: 20px;
+}
+
+.no-consultation a {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.no-consultation a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(79, 70, 229, 0.25);
+}
+
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+header {
+    text-align: center;
+
+    padding: 70px 20px 30px;
+}
+
+header h1 {
+    font-size: 50px;
+
+    color: #172554;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.20);
+}
+
+header p {
+    color: #64748b;
+
+    font-size: 19px;
+
+    margin-top: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 30px auto 70px;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eff6ff,
+        #f5f3ff
+    );
+
+    border-radius: 35px;
+
+    border: 3px solid #c7d2fe;
+
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.15);
+}
+
+main h2 {
+    font-size: 35px;
+
+    color: #312e81;
+
+    margin-bottom: 18px;
+}
+
+main p {
+    font-size: 18px;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+main button {
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+main button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.30);
+}
+
+
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer {
-    background-color: #172554;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #312e81,
+        #1e3a8a
+    );
 
     color: white;
 
     text-align: center;
 
-    padding: 25px;
+    padding: 30px;
 
-    margin-top: 40px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 15px;
 }
 
 
-/* =========================
+/* =========================================
    MOBILE RESPONSIVE
-========================= */
+========================================= */
 
 @media (max-width: 700px) {
 
-    .navbar {
-        flex-direction: column;
-
-        gap: 15px;
+    .navbar h2 {
+        font-size: 23px;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
+    .navbar div {
+        flex-direction: column;
+    }
 
-        justify-content: center;
-
-        gap: 15px;
+    .navbar a {
+        width: 220px;
     }
 
     .lawyer-profile {
-        flex-direction: column;
-
-        text-align: center;
+        padding: 30px 20px;
     }
 
-    .radio-group {
-        flex-direction: column;
+    .lawyer-info h1 {
+        font-size: 28px;
+    }
 
-        gap: 10px;
+    .lawyer-photo {
+        width: 145px;
+        height: 145px;
+    }
+
+    .profile-icon {
+        font-size: 60px;
     }
 
     .consultation-box {
-        padding: 25px 20px;
+        padding: 35px 15px;
     }
-}
-.consultation-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    background: #f9f9f9;
-}
 
-.consultation-card h3 {
-    color: #172a46;
-    margin-bottom: 15px;
-}
+    .consultation-box h2 {
+        font-size: 25px;
+    }
 
-.consultation-card p {
-    margin: 8px 0;
-}
+    .form-group {
+        width: 100%;
+    }
 
-.pending {
-    color: orange;
-    font-weight: bold;
-}
-.consultation-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    background: #f9f9f9;
-}
+    .submit-btn {
+        width: 100%;
+    }
 
-.consultation-card h3 {
-    color: #172a46;
-    margin-bottom: 15px;
-}
+    .consultation-card {
+        width: 100%;
+        padding: 25px 15px;
+    }
 
-.consultation-card p {
-    margin: 8px 0;
-}
+    header h1 {
+        font-size: 35px;
+    }
 
-.pending {
-    color: orange;
-    font-weight: bold;
+    main {
+        width: 94%;
+        padding: 50px 20px;
+    }
+
+    main h2 {
+        font-size: 27px;
+    }
 }

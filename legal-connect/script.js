@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
             phone +
             "</p>" +
 
-            "<p><strong>Lawyer:</strong> Adv. Rahul Sharma</p>" +
+            "<p><strong>Lawyer:</strong> Adv. Anurag Singh</p>" +
 
             "<p><strong>Category:</strong> " +
             category +
